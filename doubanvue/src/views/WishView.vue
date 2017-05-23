@@ -1,5 +1,5 @@
 <template>
-    <div class="wish-view" >
+    <div class="wish-view">
         <div class="hd">
             <span class="title">{{subject.title}}</span>
             <a href="javascript:history.go(-1);" class="btn-cancel">取消</a>
@@ -58,11 +58,11 @@ export default {
     data() {
         return {
             items: new Array(5)
-           
+
         }
     },
     methods: {
-       
+
     },
     computed: {
         ...mapState({

@@ -14,7 +14,9 @@ import SearchView from '../views/SearchView'
 import LoginView from '../views/LoginView'
 import RegisterView from '../views/RegisterView'
 import WishView from '../views/WishView'
-import LookedView from '../views/LookedView'
+import MoreMovie from '../views/MoreView'
+// import MoreMovie from '../views/MoreMovie'
+
 Vue.use(Router)
 
 export default new Router({
@@ -79,9 +81,9 @@ export default new Router({
         name: 'WishView',
         component: WishView
     }, {
-        path: '/looked',
-        name: 'LookedView',
-        component: LookedView
+        path: '/more',
+        name: 'MoreMovie',
+        component: MoreMovie
     }, {
         path: '*',
         redirect: '/pages/'

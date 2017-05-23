@@ -1,13 +1,10 @@
 <template>
-    <div class="scroller">
+    <div class="morescroller">
         <div class="header">
-            <h2>{{title}}</h2>
-            <a href="javascript:;" @click="getMovie(number)">更多</a>
-            <!-- <a href="javascript:;" @click="getMovie(2)">更多</a> -->
-            <!-- <router-link :to="{name:'MoreMovie'}">更多</router-link> -->
+            <h1>{{title}}</h1>
         </div>
         <div class="content">
-            <slot name="promItem"></slot>
+            <!-- <slot name="promItem"></slot> -->
             <ul class="hasCover" v-if="type === 'hasCover'">
                 <li v-for="item in items">
                     <router-link :to="'subject/' + item.id" append>
@@ -27,13 +24,9 @@
 </template>
 <script type="text/javascript">
 import Rating from './Rating'
-import $ from 'jquery'
-// import {
-//     mapState
-// } from 'vuex'
 export default {
-    name: 'scroller',
-    props: ['title', 'type', 'items', 'number'],
+    name: 'morescroller',
+    props: ['title', 'type', 'items'],
     components: {
         Rating
     },
@@ -41,21 +34,10 @@ export default {
         return {
 
         }
-    },
-    methods: {
-        getMovie: function(num) {
-            sessionStorage.setItem("num", num)
-            this.$router.push({
-                path: "/more"
-            })
-        }
     }
-
-
-
 }
 </script>
-<style type="text/css" scoped>
+<style type="text/css" scoped="">
 a {
     text-decoration: none;
 }
@@ -80,7 +62,7 @@ a {
     color: #42bd56;
 }
 
-.header h2 {
+.header h1 {
     display: inline-block;
     position: absolute;
     left: 2rem;
@@ -105,7 +87,7 @@ a {
     max-width: 100%;
     margin-top: 1rem;
     line-height: 1.6rem;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     color: #111;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -115,8 +97,13 @@ a {
 
 .hasCover li {
     display: inline-block;
-    width: 10rem;
-    margin-left: 1rem;
+    width: 33.33333%;
+    float: left;
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-bottom: 6%;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .hasCover li:first-child {
@@ -124,7 +111,7 @@ a {
 }
 
 .hasCover img {
-    height: 15rem;
+    height: 11rem;
 }
 
 .onlyString {

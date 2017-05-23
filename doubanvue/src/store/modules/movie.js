@@ -61,7 +61,7 @@ const mutations = {
 
 const actions = {
     getMovie({ commit }) {
-        Vue.http.jsonp('https://api.douban.com/v2/movie/in_theaters?count=8')
+        Vue.http.jsonp('https://api.douban.com/v2/movie/in_theaters')
             .then(res => {
                 commit({
                     type: 'getMovie',
@@ -69,7 +69,7 @@ const actions = {
                     res: res.body.subjects
                 })
             })
-        Vue.http.jsonp('https://api.douban.com/v2/movie/coming_soon?count=8')
+        Vue.http.jsonp('https://api.douban.com/v2/movie/coming_soon')
             .then(res => {
                 commit({
                     type: 'getMovie',
@@ -77,7 +77,7 @@ const actions = {
                     res: res.body.subjects
                 })
             })
-        Vue.http.jsonp('https://api.douban.com/v2/movie/top250?count=8')
+        Vue.http.jsonp('https://api.douban.com/v2/movie/top250')
             .then(res => {
                 commit({
                     type: 'getMovie',

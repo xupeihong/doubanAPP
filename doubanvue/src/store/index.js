@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import movie from './modules/movie'
+import moremovie from './modules/moremovie'
 import activities from './modules/activities'
 import book from './modules/book'
 import subject from './modules/subject'
@@ -12,13 +13,14 @@ import user from './modules/user'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-  modules: {
-    movie,
-    activities,
-    book,
-    subject,
-    group,
-    search,
-    user
-  }
+    modules: {
+        movie,
+        activities,
+        book,
+        subject,
+        group,
+        search,
+        user,
+        moremovie
+    }
 })
